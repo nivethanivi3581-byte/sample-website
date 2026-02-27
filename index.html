@@ -1,79 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>KMV Group UAE</title>
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#0c6ea8,#083b5c);
-color:white;
-text-align:center;
-}
-
-.container{
-max-width:600px;
-padding:40px;
-}
-
-h1{
-font-size:50px;
-letter-spacing:2px;
-margin-bottom:15px;
-}
-
-h2{
-font-weight:normal;
-margin-bottom:20px;
-}
-
-p{
-opacity:.9;
-line-height:1.6;
-}
-
-.contact{
-margin-top:25px;
-font-size:14px;
-opacity:.8;
-}
-
-</style>
 </head>
 
 <body>
 
+<header>
+
+<div class="container nav">
+
+<div class="logo">
+<img src="logo.png">
+<h2>KMV GROUP UAE</h2>
+</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#gallery">Gallery</a>
+<a href="#videos">Videos</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="slider">
+
+<img src="images/image 1.jpeg" class="slide active">
+<img src="images/image 2.jpeg" class="slide">
+<img src="images/image 3.jpeg" class="slide">
+<img src="images/image 4.jpeg" class="slide">
+
+</div>
+
+<div class="hero-text">
+
+<h3>KMV GROUP UAE</h3>
+<h1>Aluminium & Glass Experts</h1>
+<p>ACP Cladding | Curtain Walls | Aluminium Fabrication</p>
+
+</div>
+
+</section>
+
+
+<section id="about" class="section">
+
 <div class="container">
 
-<h1>KMV GROUP</h1>
-
-<h2>Website Under Maintenance</h2>
+<div class="section-title">
+<h2>About Us</h2>
+<span></span>
+</div>
 
 <p>
-We are currently working on our new website.<br>
-Our services will be available online soon.
+KMV Group provides aluminium fabrication, ACP cladding,
+glass partitions, curtain walls, skylights and architectural facade works across UAE.
 </p>
 
-<div class="contact">
-Dubai, United Arab Emirates<br>
-Email: info@kmvgroupuae.com
+</div>
+
+</section>
+
+
+<section id="services" class="section">
+
+<div class="section-title">
+<h2>Our Services</h2>
+<span></span>
+</div>
+
+<div class="container grid">
+
+<div class="card">ACP Cladding Works</div>
+<div class="card">Curtain Wall Systems</div>
+<div class="card">Glass Partitions</div>
+<div class="card">Aluminium Doors & Windows</div>
+<div class="card">Skylights & Pergolas</div>
+<div class="card">Interior Fitouts</div>
+
+</div>
+
+</section>
+
+
+<section id="projects" class="section">
+
+<div class="section-title">
+<h2>Our Projects</h2>
+<span></span>
+</div>
+
+<div class="container grid">
+
+<div class="card">
+<h3>Warehouse & Accommodation</h3>
+<p>Sharjah</p>
+</div>
+
+<div class="card">
+<h3>Office Warehouse</h3>
+<p>JAFZA – Dubai</p>
+</div>
+
+<div class="card">
+<h3>Residential Villas</h3>
+<p>Al Madam – Sharjah</p>
+</div>
+
+<div class="card">
+<h3>Residential Villa</h3>
+<p>Nad Al Shiba – Dubai</p>
+</div>
+
+<div class="card">
+<h3>Commercial Warehouse</h3>
+<p>Jebel Ali – Dubai</p>
 </div>
 
 </div>
+
+</section>
+
+
+<section id="gallery" class="section">
+
+<div class="section-title">
+<h2>Our Work</h2>
+<span></span>
+</div>
+
+<div class="container gallery" id="gallery-container"></div>
+
+</section>
+
+
+<section id="videos" class="section">
+
+<div class="section-title">
+<h2>Project Videos</h2>
+<span></span>
+</div>
+
+<div class="container videos">
+
+<video controls>
+<source src="videos/video 1.mp4">
+</video>
+
+<video controls>
+<source src="videos/video 2.mp4">
+</video>
+
+</div>
+
+</section>
+
+
+<section id="contact" class="section">
+
+<div class="section-title">
+<h2>Contact Us</h2>
+<span></span>
+</div>
+
+<div class="container contact">
+
+<div>
+
+<h3>KMV Technical Services LLC</h3>
+
+<p>Dubai, UAE</p>
+
+<p>Phone</p>
+<p>+971 50 735 1633</p>
+<p>+971 55 245 9967</p>
+
+<p>Email</p>
+<p>info@kmvgroupuae.com</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 KMV Group UAE</p>
+
+</footer>
+
+
+<div id="lightbox">
+<img id="lightbox-img">
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
