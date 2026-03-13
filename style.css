@@ -107,15 +107,89 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(12,1fr);
+grid-auto-rows:26px;
+grid-auto-flow:dense;
+gap:14px;
 }
 
 .gallery img{
 width:100%;
-height:220px;
+height:100%;
 object-fit:cover;
 cursor:pointer;
+border-radius:10px;
+box-shadow:0 10px 24px rgba(0,0,0,0.14);
+transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+.gallery img:hover{
+transform:translateY(-4px) scale(1.02);
+box-shadow:0 14px 28px rgba(0,0,0,0.2);
+filter:brightness(1.04);
+z-index:2;
+}
+
+.gallery img:nth-child(6n+1){
+grid-column:span 6;
+grid-row:span 10;
+}
+
+.gallery img:nth-child(6n+2){
+grid-column:span 3;
+grid-row:span 7;
+}
+
+.gallery img:nth-child(6n+3){
+grid-column:span 3;
+grid-row:span 12;
+}
+
+.gallery img:nth-child(6n+4){
+grid-column:span 4;
+grid-row:span 9;
+}
+
+.gallery img:nth-child(6n+5){
+grid-column:span 5;
+grid-row:span 8;
+}
+
+.gallery img:nth-child(6n){
+grid-column:span 3;
+grid-row:span 8;
+}
+
+@media (max-width: 900px){
+  .gallery{
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:22px;
+  }
+
+  .gallery img:nth-child(6n+1),
+  .gallery img:nth-child(6n+4),
+  .gallery img:nth-child(6n+5){
+    grid-column:span 3;
+  }
+
+  .gallery img:nth-child(6n+2),
+  .gallery img:nth-child(6n+3),
+  .gallery img:nth-child(6n){
+    grid-column:span 3;
+  }
+}
+
+@media (max-width: 560px){
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:20px;
+    gap:10px;
+  }
+
+  .gallery img{
+    grid-column:span 1 !important;
+    grid-row:span 8 !important;
+  }
 }
 
 .videos{
@@ -157,4 +231,40 @@ align-items:center;
 #lightbox img{
 max-width:90%;
 max-height:90%;
+}
+.project-gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.project-card{
+position:relative;
+overflow:hidden;
+cursor:pointer;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+transition:0.4s;
+}
+
+.project-card:hover img{
+transform:scale(1.1);
+}
+
+.project-overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+color:white;
+padding:10px;
+text-align:center;
+font-size:18px;
 }

@@ -17,13 +17,30 @@ slides[index].classList.add("active")
 
 // LOAD 60 IMAGES AUTOMATICALLY
 
-let gallery = document.getElementById("gallery-container")
+let projectGallery = document.getElementById("project-gallery")
 
-for(let i=1;i<=60;i++){
+for(let i=1;i<=16;i++){
+
+let card = document.createElement("div")
+card.className = "project-card"
 
 let img = document.createElement("img")
-img.src = `images/image ${i}.jpeg`
-gallery.appendChild(img)
+
+// first image inside each folder
+img.src = `Unique/unique${i}/1.jpeg`
+
+let overlay = document.createElement("div")
+overlay.className = "project-overlay"
+overlay.innerText = "Project " + i
+
+card.appendChild(img)
+card.appendChild(overlay)
+
+card.onclick = ()=>{
+window.location.href = `project.html?project=${i}`
+}
+
+projectGallery.appendChild(card)
 
 }
 

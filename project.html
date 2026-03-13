@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>Project Gallery</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Project Gallery</h2>
+
+<div id="project-images" class="gallery"></div>
+
+</div>
+
+<script>
+
+let params = new URLSearchParams(window.location.search)
+let project = params.get("project")
+
+let container = document.getElementById("project-images")
+
+for(let i=1;i<=30;i++){
+
+let img = document.createElement("img")
+
+img.src = `Unique/unique${project}/${i}.jpeg`
+
+img.onerror = function(){ this.remove() }
+
+container.appendChild(img)
+
+}
+
+</script>
+
+</body>
+
+</html>
