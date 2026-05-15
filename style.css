@@ -268,3 +268,42 @@ padding:10px;
 text-align:center;
 font-size:18px;
 }
+
+.back-bar{
+padding:20px;
+background:#f4f4f4;
+}
+
+.back-bar a{
+text-decoration:none;
+font-weight:500;
+color:#0f6e8c;
+font-size:18px;
+}
+
+.about-box{
+max-width:950px;
+margin:auto;
+background:#fff;
+padding:40px;
+border-radius:12px;
+box-shadow:0 8px 24px rgba(0,0,0,0.08);
+line-height:1.9;
+font-size:17px;
+color:#444;
+text-align:justify;
+}
+
+.about-box p{
+margin-bottom:22px;
+}
+
+@media(max-width:768px){
+
+.about-box{
+padding:25px;
+font-size:16px;
+text-align:left;
+}
+
+}
