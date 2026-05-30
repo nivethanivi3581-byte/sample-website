@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project Gallery</title>
+<meta name="description" content="Project gallery for KMV Group UAE. Browse project images.">
 
 <link rel="stylesheet" href="style.css">
 
@@ -13,7 +15,7 @@
 <body>
     
 <div class="back-bar">
-<a href="index.html#gallery">← Back to Projects</a>
+<a href="gallery.html">← Back to Gallery</a>
 </div>
 
 <div class="container">
@@ -31,20 +33,27 @@ let project = params.get("project")
 
 let container = document.getElementById("project-images")
 
-for(let i=1;i<=30;i++){
-
-let img = document.createElement("img")
-
-img.src = `Unique/unique${project}/${i}.jpeg`
-
-img.onerror = function(){ this.remove() }
-
-container.appendChild(img)
-
+if(!project || isNaN(project)){
+	container.innerHTML = '<p>No project selected. Return to <a href="gallery.html">gallery</a>.</p>'
+} else {
+	project = parseInt(project, 10)
+	if(project < 1 || project > 16){
+		container.innerHTML = '<p>Project not found. Return to <a href="gallery.html">gallery</a>.</p>'
+	} else {
+		for(let i=1;i<=30;i++){
+			let img = document.createElement("img")
+			img.src = `Unique/unique${project}/${i}.jpeg`
+			img.alt = `Project ${project} image ${i}`
+			img.loading = 'lazy'
+			img.onerror = function(){ this.remove() }
+			container.appendChild(img)
+		}
+	}
 }
 
 </script>
 
+<script src="script.js"></script>
 </body>
 
 </html>

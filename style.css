@@ -5,6 +5,28 @@ box-sizing:border-box;
 font-family:Poppins;
 }
 
+/* skip link for keyboard users */
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:10px;
+  top:10px;
+  width:auto;
+  height:auto;
+  padding:8px 12px;
+  background:#0f6e8c;
+  color:#fff;
+  z-index:9999;
+  border-radius:4px;
+  text-decoration:none;
+}
+
 .container{
 width:90%;
 max-width:1100px;
@@ -26,6 +48,8 @@ padding:15px 0;
 .logo{
 display:flex;
 align-items:center;
+text-decoration:none;
+color:#222;
 }
 
 .logo img{
@@ -37,6 +61,28 @@ nav a{
 margin-left:20px;
 text-decoration:none;
 color:#333;
+}
+
+.page-hero{
+background:#0f6e8c;
+color:white;
+padding:80px 0;
+}
+
+.page-hero h1{
+font-size:42px;
+margin-bottom:12px;
+}
+
+.page-hero p{
+font-size:18px;
+max-width:760px;
+}
+
+.link-card{
+display:block;
+text-decoration:none;
+color:inherit;
 }
 
 .hero{
@@ -300,6 +346,22 @@ margin-bottom:22px;
 
 @media(max-width:768px){
 
+.nav{
+align-items:flex-start;
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+gap:10px 16px;
+}
+
+nav a{
+margin-left:0;
+}
+
 .about-box{
 padding:25px;
 font-size:16px;
@@ -316,6 +378,30 @@ body{
 background:#fafafa;
 color:#222;
 line-height:1.7;
+opacity:0;
+transition:opacity .28s ease;
+}
+
+body.page-ready{
+opacity:1;
+}
+
+body.page-exit{
+opacity:1;
+}
+
+main{
+transform:translateY(14px);
+transition:transform .42s ease, opacity .42s ease;
+}
+
+body.page-ready main{
+transform:translateY(0);
+}
+
+body.page-loading main{
+opacity:.25;
+transform:translateY(-8px);
 }
 
 .section:nth-child(even){
